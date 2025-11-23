@@ -71,10 +71,19 @@ Measured with `python src/measure_latency.py --model_dir models/distilbert --dev
 
 The CPU latency easily satisfies the ≤ 20 ms requirement. Use the `--max_length` flag (default 256) to trade accuracy vs. speed if needed.
 
+
 ## WandB finetuning
   1. `wandb login`
   2. `wandb sweep wandb_sweep.yaml`
   3. `wandb agent <entity>/<project>/<sweep_id>`
 
+Report - https://drive.google.com/file/d/1tq61EkdTKrXI18qVM5U9yKJodhIW16pB/view?usp=sharing
+
+## Hyperparams:
+Training Loop – batch_size=8 , eval_batch_size=8, epochs=8
+Optimization – AdamW, lr=3e-5 , weight_decay=0.0, linear schedule with warmup_ratio=0.1
+
 ## Trained Model Weights Drive Link 
 https://drive.google.com/file/d/1onLqu7UpgMrNSdfhsTPliPBLDXf5CCVM/view?usp=sharing
+
+
