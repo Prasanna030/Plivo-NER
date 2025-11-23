@@ -71,12 +71,10 @@ Measured with `python src/measure_latency.py --model_dir models/distilbert --dev
 
 The CPU latency easily satisfies the ≤ 20 ms requirement. Use the `--max_length` flag (default 256) to trade accuracy vs. speed if needed.
 
-## Next steps
-
-- Adjust data generation to add new noise patterns or entity templates.
-- Tune thresholds/post-processing in `src/predict.py` to bias toward precision or recall.
-- Export the `models/distilbert` folder for deployment or convert to ONNX for even lower latency.
-- Launch a hyperparameter sweep with Weights & Biases using `wandb_sweep.yaml`:
+## WandB finetuning
   1. `wandb login`
   2. `wandb sweep wandb_sweep.yaml`
   3. `wandb agent <entity>/<project>/<sweep_id>`
+
+## Trained Model Weights Drive Link 
+https://drive.google.com/file/d/1onLqu7UpgMrNSdfhsTPliPBLDXf5CCVM/view?usp=sharing
