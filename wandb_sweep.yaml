@@ -1,0 +1,40 @@
+program: src/train.py
+method: bayes
+metric:
+  name: dev_loss
+  goal: minimize
+parameters:
+  lr:
+    distribution: log_uniform
+    min: 2e-5
+    max: 4e-5
+  batch_size:
+    values: [8, 16, 32]
+  eval_batch_size:
+    values: [8, 16]
+  epochs:
+    values: [4, 6, 8]
+  warmup_ratio:
+    distribution: uniform
+    min: 0.05
+    max: 0.15
+  weight_decay:
+    values: [0.0, 0.01]
+  max_length:
+    values: [192, 256]
+command:
+  - ${env}
+  - python
+  - src/train.py
+  - --model_name
+  - distilbert-base-uncased
+  - --train
+  - data/train.jsonl
+  - --dev
+  - data/dev.jsonl
+  - --out_dir
+  - models/distilbert
+  - --wandb_project
+  - pii-ner
+  - --wandb_mode
+  - online

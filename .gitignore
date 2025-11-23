@@ -1,0 +1,17 @@
+# Model checkpoints and directories
+models/
+
+# Weights & Biases local runs
+wandb/
+
+# Output artifacts and caches
+out/
+__pycache__/
+
+# Model files
+*.bin
+*.pt
+*.ckpt
+
+# Misc
+log.txt
