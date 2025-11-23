@@ -7,6 +7,7 @@ Token-level NER system that flags PII (credit cards, phones, emails, names, date
 - `generate_data.py` – synthesizes 800 train / 150 dev utterances with noisy STT patterns, spelled-out numbers, and multi-entity sentences.
 - `src/` – dataset loader, label map, model/training/inference scripts, span metrics, latency probe.
 - `models/` – saved checkpoints (`distilbert` is primary, `bert_base` kept for reference).
+-  model weights and predictions for dev data are in google drive link attached below
 
 ## Quickstart
 
